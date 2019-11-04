@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+
+before_install:
+  - docker build -t zemun-png/docker-react -f Dockerfil.dev .
+
+script:
+  - docker run zemun-png/docker-react npm run test -- --coverage
